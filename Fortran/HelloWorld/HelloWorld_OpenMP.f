@@ -41,6 +41,7 @@
 !$omp& private(id)
 
       ! Print some messages
+      id = omp_get_thread_num ( )
       write(*,'(a,i3,a)') '  Process ', id, ' says "Hello world!"'
 
 !$omp end parallel
@@ -50,9 +51,9 @@
       end
 
 
-      subroutine hello(id)
-      inlude 'omp_lib.h'
-
-      write(*,*) 'Let us say "Hello world!"'
-
-      end subroutine
+!      subroutine hello(id)
+!      inlude 'omp_lib.h'
+!
+!      write(*,*) 'Let us say "Hello world!"'
+!
+!      end subroutine
